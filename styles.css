@@ -212,6 +212,9 @@ p, blockquote{
     line-height: 1.8;
 }
 
+
+
+
 ::selection{
     background: var(--background-orange);
     color: var(--color-white-100);
@@ -1267,7 +1270,7 @@ img{
     margin-bottom: 100px;
 }
 
-.contact-info .info-box{
+.contact-info .info-box {
     background: var(--background-dark-80);
     border: 1px solid var(--background-dark-70);
     text-align: center;
@@ -1281,13 +1284,27 @@ img{
 
 }
 
-.contact-info .info-box ion-icon{
+.contact-info .info-box ion-icon {
     font-size: var(--font-size-48);
     color: var(--color-white-70);
     margin-bottom: 10px;
     transition: 0.25s;
+}
+
+.info-box:hover .iconos_contacto {
+    color: var(--color-white-95) ;
+    fill: var(--color-white-95);
+    transition: 0.1s;
 
 }
+.iconos_contacto {
+    color: var(--color-white-60);
+    fill: var(--color-white-60);
+    transition: 0.1s;
+
+}
+
+
 .contact-info .info-box:hover ion-icon  {
     color: white;
 }
