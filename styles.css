@@ -1817,3 +1817,54 @@ img{
 .videojuego-item:hover .logo_videojuegos {
     fill: white; /* Cambia el color de los iconos a blanco */
 }
+
+/**/
+.icono_menu_amburguesa_color2{
+    fill: var(--color-white-80);
+}
+
+.icono_menu_amburguesa {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.icono_menu_amburguesa svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease, opacity 0.3s ease;  /* Suaviza la escala y opacidad */
+}
+
+
+
+
+/* Inicialmente, el ícono de hamburguesa es visible */
+#iconoHamburguesa {
+    opacity: 1;
+}
+
+/* Inicialmente, el ícono de cerrar está oculto */
+#iconoCerrar {
+    opacity: 0;
+}
+
+/* Cuando el menú está activo, ocultamos el ícono de hamburguesa y mostramos el ícono de cerrar */
+.side-bar.active #iconoHamburguesa {
+
+    opacity: 0;  /* Ocultamos el ícono de hamburguesa */
+}
+
+.side-bar.active #iconoCerrar {
+
+    opacity: 1;  /* Mostramos el ícono de cerrar */
+}
+

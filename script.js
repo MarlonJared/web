@@ -1,5 +1,8 @@
-const menuToggler = document.querySelector('.menu-toggler');
+const menuToggler = document.querySelector('.menu-toggler, .icono_menu_amburguesa');
 const sideBar = document.querySelector('.side-bar');
+
+const iconoHamburguesa = document.getElementById('iconoHamburguesa');
+const iconoCerrar = document.getElementById('iconoCerrar');
 
 const navItemLinks = document.querySelectorAll('.nav li a');
 const pages = document.querySelectorAll('.page');
@@ -7,9 +10,54 @@ const pages = document.querySelectorAll('.page');
 const filterBtn = document.querySelectorAll('.filter-item');
 const itemCategory = document.querySelectorAll('.item-category');
 
-/* Slidebar Toggle */
+const elemento = document.querySelector ('.icono_escala');
+
+elemento.addEventListener('mouseenter', function() {
+    elemento.style.transition = 'transform 0.2s ease, fill 0.3s ease';
+    elemento.setAttribute('fill', '#fff');
+    iconoHamburguesa.setAttribute('fill', '#fff');
+    elemento.style.transform = 'scale(1.2)';  // Aumentamos un 10% el tamaño
+});
+
+// Cuando el mouse sale del área del elemento, volvemos al tamaño original
+elemento.addEventListener('mouseleave', function() {
+    elemento.style.transition = 'transform 0.2s ease, fill 0.3s ease';
+    elemento.setAttribute('fill', '#d5d5d5');
+    iconoHamburguesa.setAttribute('fill', '#d5d5d5');
+    elemento.style.transform = 'scale(1)';  // Volvemos al tamaño original
+});
+
+
+let rotation = 0; // Variable para acumular grados de rotación
+
 menuToggler.addEventListener('click', function () {
-    sideBar.classList.toggle('active');
+       // Alternamos el valor de rotación entre 0 y 180 grados
+    rotation = rotation === 0 ? 180 : 0; 
+
+    // Primero, hacemos más pequeño los íconos (efecto escala)
+    iconoHamburguesa.style.transform = `scale(0.5) rotate(${rotation}deg)`;
+    iconoCerrar.style.transform = `scale(0.5) rotate(${rotation}deg)`; // Rotamos 180 grados más para el ícono de cerrar
+
+    // Añadimos un pequeño retraso para que la escala termine antes de rotar
+    setTimeout(function () {
+        // Alternamos el menú
+        sideBar.classList.toggle('active');
+
+        // Cuando el menú está activo (abierto), mostramos el ícono de cerrar y ocultamos el de hamburguesa
+        if (sideBar.classList.contains('active')) {
+            iconoHamburguesa.style.opacity = '0';
+            iconoCerrar.style.opacity = '1';
+        } else {
+            iconoHamburguesa.style.opacity = '1';
+            iconoCerrar.style.opacity = '0';
+        }
+
+        // Ahora, restauramos la escala a 1 para que se vea el ícono en su tamaño original
+        iconoHamburguesa.style.transition = 'transform 0.2s ease';
+        iconoCerrar.style.transition = 'transform 0.2s ease';
+        iconoHamburguesa.style.transform = `rotate(${rotation + 180}deg) scale(1)`;
+        iconoCerrar.style.transform = `rotate(${rotation - 180}deg) scale(1)`;
+    }, 80); // El tiempo del retraso es el mismo que el de la animación de escala
 });
 
 /* Page Navigation Functionality (Arreglado para Traducciones) */
