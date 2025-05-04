@@ -1874,7 +1874,14 @@ img{
 
 
 
-
+@media (hover: hover) {
+    .tooltip:hover .tooltip-img {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+  }
+  
 /* Estilos para el contenedor principal del tooltip */
 .tooltip {
     position:relative;

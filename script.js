@@ -354,3 +354,40 @@ document.addEventListener('touchstart', (e) => {
     }
 });
 
+
+
+//para resumen el tooltip
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Selecciona todos los tooltips
+    const tooltips = document.querySelectorAll(".tooltip");
+
+    tooltips.forEach((tooltip) => {
+      const tooltipImg = tooltip.querySelector(".tooltip-img");
+
+      tooltip.addEventListener("click", function (e) {
+        e.stopPropagation(); // Evita que se propague el evento a otros elementos
+        // Alterna la visibilidad del tooltip
+        const isActive = tooltipImg.style.opacity === "1";
+        closeAllTooltips();
+        if (!isActive) {
+          tooltipImg.style.opacity = "1";
+          tooltipImg.style.transform = "scale(1)";
+          tooltipImg.style.pointerEvents = "auto";
+        }
+      });
+    });
+
+    // Cierra todos los tooltips si se hace clic fuera
+    document.addEventListener("click", function () {
+      closeAllTooltips();
+    });
+
+    function closeAllTooltips() {
+      document.querySelectorAll(".tooltip-img").forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "scale(0.8)";
+        el.style.pointerEvents = "none";
+      });
+    }
+  });
