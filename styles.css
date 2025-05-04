@@ -760,13 +760,14 @@ img{
 .resume-row .wrapper:nth-child(1){
     width: 65%;
     margin-right: 40px;
+    
 }
 
 .resume-row .wrapper :is(.education, .experience){
     
     
 
-    margin-bottom: 100px;}
+    margin-bottom: 80px;}
 
 
 
@@ -834,7 +835,8 @@ img{
 
 .education .divider {
     
-    margin: 0px 0;
+    margin: 0px 0px;
+   
     
 }
 
@@ -881,7 +883,7 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 12px;
 }
 
 .resume-row .progress-detail .progress-percent{
@@ -1868,3 +1870,82 @@ img{
     opacity: 1;  /* Mostramos el ícono de cerrar */
 }
 
+/* ESPACIO EDICION DE CODE CSS PARA IMAGENES EMERGENTES (TITULOS EN TOOLTIPS) */
+
+
+
+
+/* Estilos para el contenedor principal del tooltip */
+.tooltip {
+    position:relative;
+    display: inline-block;
+  }
+  
+  .tooltip-img {
+    position: absolute;
+    top: 120%; /* Aparece justo debajo de "Ver" */
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 5px;
+    border-radius: 4px;
+    opacity: 0;  /* Inicialmente oculto */
+    transform: scale(0.8); /* Inicialmente más pequeño */
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;  /* Tooltip no interactúa cuando está oculto */
+    z-index: 9999;
+    color: white;
+    font-family: sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    width: 215px;  /* El ancho máximo del tooltip */
+    text-align:left;
+    box-sizing: border-box;
+    display: block;
+  }
+  
+  /* Cuando el mouse pasa por encima de "Ver", el tooltip se muestra */
+  .tooltip:hover .tooltip-img {
+    opacity: 1; /* Tooltip visible */
+    transform: scale(1); /* Tooltip con tamaño normal */
+    pointer-events: auto;  /* Tooltip puede interactuar */
+  }
+  
+  /* Estilo para la flecha en el tooltip */
+  .tooltip-img::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 20px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid rgba(0, 0, 0, 0.85);
+  }
+  
+  /* Estilos para la imagen dentro del tooltip */
+  .tooltip-img img {
+    display: block;
+    max-width: 320px; /* Limita el tamaño máximo de la imagen */
+    width: 100%; /* Imagen ocupa todo el ancho disponible */
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 6px; /* Separación entre la imagen y el texto */
+  }
+  
+  /* Estilos para el texto dentro del tooltip */
+  .tooltip-text {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: white;
+    text-align: center;
+    max-width: 100%; /* El texto ocupa todo el ancho disponible */
+    white-space: normal;
+    word-wrap: break-word; /* Asegura que el texto se ajuste y no se salga del contenedor */
+  }
+  
+  .texto_info {
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
