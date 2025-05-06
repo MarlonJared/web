@@ -546,16 +546,59 @@ img{
     background: var(--background-dark-80);
     box-shadow: inset -2px 0 0 var(--background-orange);
 }
+.social-btn-groups {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.1em;
+    padding-top: 25%;
+    padding-bottom: 25%;}
 
-.social-btn-groups .btn{
-    padding: 4px 7px 0 7px;
-    margin: 40px 2px;
+.social-btn-groups .btn {
+    padding: 8px 7px 4px 7px;
+    margin: 0px; /* Reducido para responsive */
     background: var(--background-dark-70);
     color: var(--color-white-60);
     transition: all var(--transition-default);
+    flex: 1 0 calc(33.333% - 10px); /* 3 columnas en desktop */
+    max-width: calc(33.333% - 10px);
+    text-align: center;
+    box-sizing: border-box;
+    
 }
 
-.social-btn-groups .btn:hover{
+
+/* Tablet: 2 columnas */
+@media (max-width: 550px) {
+    .social-btn-groups .btn {
+        flex: 1 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        padding: 5% 7px 5% 7px;
+
+    }
+    .social-btn-groups{
+        padding-top: 25%;
+        padding-bottom: 25%;
+    }
+   
+}
+
+/* Móvil: 1 columna */
+@media (max-width: 450px) {
+    .social-btn-groups .btn {
+        flex: 1 0 100%;
+        max-width: 100%;
+        padding: 8px 7px 4px 7px;
+
+    }
+    .social-btn-groups{
+       padding: 1%;
+    }
+}
+
+
+/* Efecto hover (se mantiene igual) */
+.social-btn-groups .btn:hover {
     background: var(--background-orange);
     color: var(--color-white-100);
 }
