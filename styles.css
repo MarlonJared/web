@@ -1999,3 +1999,47 @@ img{
     padding: 0 10px;
   }
   
+/*--------------------------*/
+
+
+/* Contenedor responsivo */
+.embed-wrapper {
+  width: 100%;
+  max-width: 540px;
+  min-width: 320px; /* <-- Mínimo 320px para móviles */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Embed de Instagram adaptativo */
+.instagram-media {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 320px !important;
+  border: 0;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+/* Estilo del enlace debajo */
+.instaalink {
+  display: block;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.instaalink:hover {
+  color: #1da1f2;
+  text-decoration: underline;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 480px) {
+  .instaalink {
+    font-size: 14px;
+  }
+}
