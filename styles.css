@@ -2006,7 +2006,7 @@ img{
 .embed-wrapper {
   width: 100%;
   max-width: 540px;
-  min-width: 320px; /* <-- Mínimo 320px para móviles */
+  min-width: 200px; /* <-- Mínimo 320px para móviles */
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -2015,7 +2015,7 @@ img{
 .instagram-media {
   width: 100% !important;
   max-width: 100% !important;
-  min-width: 320px !important;
+  min-width: 200px !important;
   border: 0;
   margin: 0 auto !important;
   box-sizing: border-box;
