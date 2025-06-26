@@ -1012,20 +1012,17 @@ img{
     outline-offset: 0px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    filter: grayscale(0%) brightness(1);
     position: relative;
     z-index: 1;
 }
 
 .img_gallery:hover, .video_gallery:hover , .lusido:hover{
     transform: scale(1.1);
-    filter: grayscale(0%) brightness(1);
     z-index: 10;
     box-shadow: 0px 10px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .img_gallery:not(:hover), .video_gallery:not(:hover) {
-    filter: grayscale(0%) brightness(1);
 }
 
 /* Lightbox */

@@ -303,14 +303,12 @@ const lusidoImages = document.querySelectorAll('.lusido');
 
 function applyFullColorFilter(image) {
     console.log("Evento activado en:", image);
-    image.style.filter = 'grayscale(0%) brightness(1)';
     image.style.transform = 'scale(1.1)'; // Escala la imagen al 110%
     image.style.zIndex = '1000'; // Asegura que la imagen esté por encima de otros elementos
 }
 
 function resetFilters() {
     lusidoImages.forEach(image => {
-        image.style.filter = 'grayscale(0%) brightness(1)';
         image.style.transform = 'scale(1)'; // Restablece la escala a su tamaño original
         image.style.zIndex = '1'; // Restablece el z-index al valor inicial
     });
