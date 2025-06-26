@@ -310,7 +310,7 @@ function applyFullColorFilter(image) {
 
 function resetFilters() {
     lusidoImages.forEach(image => {
-        image.style.filter = 'grayscale(100%) brightness(0.5)';
+        image.style.filter = 'grayscale(0%) brightness(1)';
         image.style.transform = 'scale(1)'; // Restablece la escala a su tamaño original
         image.style.zIndex = '1'; // Restablece el z-index al valor inicial
     });

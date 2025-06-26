@@ -1012,7 +1012,7 @@ img{
     outline-offset: 0px;
     cursor: pointer;
     transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    filter: grayscale(100%) brightness(1);
+    filter: grayscale(0%) brightness(1);
     position: relative;
     z-index: 1;
 }
@@ -1025,7 +1025,7 @@ img{
 }
 
 .img_gallery:not(:hover), .video_gallery:not(:hover) {
-    filter: grayscale(100%) brightness(0.5);
+    filter: grayscale(0%) brightness(1);
 }
 
 /* Lightbox */
@@ -1040,6 +1040,8 @@ img{
     justify-content: center;
     align-items: center;
     z-index: 100;
+
+
 }
 
 .lightbox.active {
@@ -1050,6 +1052,7 @@ img{
     max-width: 90%;
     max-height: 80%;
     object-fit: contain;
+    
 }
 
 .lightbox-video {
