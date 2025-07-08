@@ -217,15 +217,11 @@ const lightboxImg = document.querySelector('.lightbox-img');
 const closeBtn = document.querySelector('.close-btn');
 const downloadBtn = document.querySelector('.download-btn');
 
-let scale = 1, isDragging = false, startX = 0, startY = 0, translateX = 0, translateY = 0;
-
 gallery.addEventListener('click', (e) => {
     if (e.target.classList.contains('img_gallery')) {
         lightbox.style.display = 'flex';
         lightboxImg.src = e.target.src;
         downloadBtn.href = e.target.src;
-        lightboxImg.onload = () => { centerImage(); };
-        scale = 1;
     }
 });
 
@@ -244,45 +240,7 @@ lightbox.addEventListener('click', (e) => {
     }
 });
 
-lightboxImg.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    scale += e.deltaY > 0 ? -0.1 : 0.1;
-    scale = Math.min(3, Math.max(1, scale));
-    lightboxImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-});
 
-lightboxImg.addEventListener('mousedown', (e) => {
-    if (scale > 1) {
-        isDragging = true;
-        startX = e.clientX - translateX;
-        startY = e.clientY - translateY;
-        lightboxImg.style.cursor = 'grabbing';
-    }
-});
-
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    lightboxImg.style.cursor = 'grab';
-});
-
-document.addEventListener('mousemove', (e) => {
-    if (!isDragging) return;
-    translateX = e.clientX - startX;
-    translateY = e.clientY - startY;
-    lightboxImg.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
-});
-
-window.addEventListener('resize', () => {
-    if (lightbox.style.display === 'flex') {
-        centerImage();
-    }
-});
-
-function centerImage() {
-    lightboxImg.style.transform = `scale(${scale}) translate(0px, 0px)`;
-    translateX = 0;
-    translateY = 0;
-}
 
 /* Slider de comparación de imágenes */
 const sliders = document.querySelectorAll(".slider");
