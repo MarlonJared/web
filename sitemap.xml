@@ -2,20 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://marlonjared.github.io/web/</loc>
-    <priority>1.00</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
     <loc>https://marlonjared.github.io/web/acerca-de.html</loc>
-    <priority>0.90</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-  <url>
-    <loc>https://marlonjared.github.io/web/resumen.html</loc>
-    <priority>0.80</priority>
+    <priority>1.00</priority>
     <changefreq>monthly</changefreq>
   </url>
 
@@ -32,8 +20,20 @@
   </url>
 
   <url>
+    <loc>https://marlonjared.github.io/web/resumen.html</loc>
+    <priority>0.80</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
     <loc>https://marlonjared.github.io/web/contacto.html</loc>
     <priority>0.70</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://marlonjared.github.io/web/</loc>
+    <priority>0.50</priority>
     <changefreq>monthly</changefreq>
   </url>
 
